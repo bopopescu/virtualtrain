@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block body %}
+
+
+
+<div class="container">
+
+
+    <h1>{{post.title}}</h1>
+    <h2>{{ post.content }}</h2>
+
+    <div class="jumbotron">
+
+        <h2>Comments</h2>
+
+        <label for="user">Username</label>
+        <input type="text" name="username" id="user">
+
+
+        <label for="cont">Content</label>
+        <input type="text" name="content" id="cont">
+
+        <button data-id={{post.id}} id="send" class="btn btn-success">Send</button>
+
+        <br><br>
+
+
+    <section class="comments">
+
+        {% for comment in comments %}
+
+
+        <h1>{{ comment.username }}</h1>
+        <h1>{{ comment.content }}</h1>
+        <hr>
+        {% endfor %}
+</section>
+    </div>
+
+
+</div>
+
+
+
+
+
+{% endblock  %}
+
+{% block script %}
+
+<script src="{% static 'index.js' %}"></script>
+
+{% endblock %}

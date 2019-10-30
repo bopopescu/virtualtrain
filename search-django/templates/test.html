@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block body %}
+
+
+    {% for m in male %}
+            {{ m.name }}
+        {{ m.male }}
+
+        {% endfor %}
+
+    <hr>
+
+
+    {% for m in female %}
+            {{ m.name }}
+        {{ m.male }}
+
+        {% endfor %}
+
+
+{% endblock %}
